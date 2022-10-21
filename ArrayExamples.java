@@ -31,12 +31,14 @@ public class ArrayExamples {
       if(num < lowest) { lowest = num; }
     }
     double sum = 0;
-    for(double num: arr) {
+    int lowestChecker = 0;
+    for(double num: arr) { 
+      if(num == lowest){ lowestChecker++; }
+
       if(num != lowest) { sum += num; }
+      else if( lowestChecker > 1){ sum += num; }
     }
     return sum / (arr.length - 1);
   }
-
-
 }
 
